@@ -1,0 +1,169 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #f3f4f7;
+    text-align: center;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 53vh;
+}
+
+marquee {
+    font-size: 1.5rem;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #444;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #555;
+    margin-top: 20px;
+    font-size: 1.8rem;
+    transition: color 0.3s ease-in-out;
+}
+
+button {
+    background: #6c63ff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 8px;
+    margin: 10px;
+    transition: transform 0.2s ease, background 0.3s ease;
+}
+
+button:hover {
+    background: #5a52e4;
+    transform: scale(1.1);
+}
+
+#diceImage {
+    width: 100px;
+    margin-top: 20px;
+    animation: roll 0.6s ease-in-out;
+    display: block;
+}
+
+#name-input {
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+    margin: 10px auto;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 30px;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+/* Focus effect */
+#name-input:focus {
+    border-color: #4CAF50;  /* Green color when focused */
+    background-color: #e8f5e9;  /* Light green background */
+    box-shadow: 0 0 8px rgba(0, 150, 136, 0.6); /* Green shadow */
+    outline: none;
+}
+
+/* Placeholder styling */
+#name-input::placeholder {
+    color: #aaa;
+    font-style: italic;
+}
+
+/* Hover effect */
+#name-input:hover {
+    border-color: #3e8e41; /* Slightly darker border color on hover */
+}
+
+@keyframes roll {
+    0% { transform: rotate(0deg) scale(0.5); }
+    50% { transform: rotate(360deg) scale(1.2); }
+    100% { transform: rotate(720deg) scale(1); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 30px;
+    }
+
+    marquee {
+        font-size: 1.2rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    button {
+        padding: 8px 16px;
+        font-size: 1rem;
+    }
+
+    #diceImage {
+        width: 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 20px;
+    }
+
+    marquee {
+        font-size: 1rem;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    button {
+        padding: 6px 12px;
+        font-size: 0.9rem;
+    }
+
+    #diceImage {
+        width: 70px;
+    }
+}
+/* Responsive design */
+@media (max-width: 768px) {
+    #name-input {
+        max-width: 90%; /* On smaller screens, input takes up 90% of the width */
+        font-size: 14px; /* Reduce font size on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    #name-input {
+        max-width: 95%; /* On very small screens, input takes up 95% of the width */
+        font-size: 12px; /* Reduce font size even more on very small screens */
+        padding: 8px; /* Adjust padding for smaller screens */
+    }
+}
